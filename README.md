@@ -15,6 +15,7 @@ If you want more information on DNS, and how it works, please vist [here](https:
 In this tutorial, I have one Centos and one Ubuntu set up on Azure. Need to sign in [azure](https://azure.microsoft.com/en-us/get-started/azure-portal)
 
 Here are the two main configuration files for DNS in linux: /etc/named.conf  & /var/named
+
 My domain name for this tutorial is "learninglinux.com". IP address is my private IP address on eth0
 
 
