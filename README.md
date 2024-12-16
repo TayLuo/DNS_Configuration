@@ -27,9 +27,8 @@ Here are the following steps:
 
 
 
-2. Install LVM Tools
+2. If the package is not installed, here is the command to install the package.
    
-   Before setting up LVM, you need to install the necessary tools. Run the following command to install LVM utilities:
    
-   	     sudo apt update
-   	     sudo apt install lvm2
+   	     sudo dnf install bind bind-utils -y 
+   	     
