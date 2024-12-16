@@ -9,3 +9,5 @@ DNS, is like the phonebook of the internet. It translates human-friendly domain 
 
 
 Here is the tutorial on how to configure a DNS forward zone and reverse zone: 
+
+If you want more information on DNS, and how it works, please vist [here](https://en.wikipedia.org/wiki/Domain_Name_System)
