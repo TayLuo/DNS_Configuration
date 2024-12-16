@@ -6,3 +6,6 @@ DNS, is like the phonebook of the internet. It translates human-friendly domain 
   PTR Record: Used for reverse lookups (find a domain from an IP). 
 
   CNAME Record: Alias for another domain.
+
+
+Here is the tutorial on how to configure a DNS forward zone and reverse zone: 
