@@ -30,5 +30,5 @@ Here are the following steps:
 2. If the package is not installed, here is the command to install the package.
    
    
-   	     sudo dnf install bind bind-utils -y 
+        sudo dnf install bind bind-utils -y 
    	     
