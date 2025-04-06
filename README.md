@@ -155,42 +155,53 @@ Create Zone Files
           restorecon -rv /var/named 
           restorecon /etc/named.conf 
 
-
+<p align="center"> </p>
+<img src="https://imgur.com/7e0sqBi.png" height="80%" width="80%" >
+<br /> 
 16. Test DNS configuration and zone files for any syntax errors 
 
           named-checkconf /etc/named.conf 
-          named-checkzone lab.local /var/named/forward.lab 
-          named-checkzone lab.local /var/named/reverse.lab 
-<p align="center"> </p>
-<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
-<br /> 
-
-17. Configuring Permissions, Ownership, and SELinux
-
-          chgrp named -R /var/named 
-          chown -v root:named /etc/named.conf 
-          restorecon -rv /var/named 
-          restorecon /etc/named.conf
+          named-checkzone learninglinux.com /var/named/forward.learninglinux 
+          named-checkzone learninglinux.com /var/named/reverse.learninglinux
 <p align="center"> </p>
 <img src="https://imgur.com/km8oWsB.png" height="80%" width="80%" >
 <br /> 
 
-15. Configuring Permissions, Ownership, and SELinux
+17.  Add DNS Server Information to network file 
 
-          chgrp named -R /var/named 
-          chown -v root:named /etc/named.conf 
-          restorecon -rv /var/named 
-          restorecon /etc/named.conf
+          vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+          DNS=192.168.2.4
+          
+
+18.  Restart network service 
+
+          systemctl restart network 
+          systemctl restart NetworkManager.service (For CentOS8) 
+          
+
+19. Modify /etc/resolv.conf
+
+          nameserver 192.168.2.4
+    
+20. Test DNS server
+
+          dig masterdns.learninglinux.com 
+          nslookup masterdns.learninglinux.com
+          nslookup clienta.learninglinux.com
+          nslookup clientb.learninglinux.com
+          nslookup 192.168.2.5
+          nslookup 192.168.1.241
+
 <p align="center"> </p>
-<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<img src="https://imgur.com/6HikE8b.png" height="80%" width="80%" >
 <br /> 
-
-15. Configuring Permissions, Ownership, and SELinux
-
-          chgrp named -R /var/named 
-          chown -v root:named /etc/named.conf 
-          restorecon -rv /var/named 
-          restorecon /etc/named.conf
+          
 <p align="center"> </p>
-<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<img src="https://imgur.com/sHTE3zm.png" height="80%" width="80%" >
+<br /> 
+<p align="center"> </p>
+<img src="https://imgur.com/ErvlGmg.png" height="80%" width="80%" >
+<br /> 
+<p align="center"> </p>
+<img src="https://imgur.com/WlbS6Rv.png" height="80%" width="80%" >
 <br /> 
