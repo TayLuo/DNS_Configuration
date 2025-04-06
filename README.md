@@ -21,7 +21,7 @@ My domain name for this tutorial is "learninglinux.com". IP address is my privat
 
 Here are the following steps:
 
-  1. check the package installed on the system.
+  1. check the package installed on the Centos server
 
           rpm -qa | grep bind
 
@@ -32,3 +32,32 @@ Here are the following steps:
    
         sudo dnf install bind bind-utils -y 
    	     
+3. Configure DNS server 
+
+          sudo vi /etc/named.conf
+4. Edit the line "listen-on port 53 { 127.0.0.1; }"
+
+          listen-on port 53 { 127.0.0.1; 192.168.2.4; }; 
+5. Go to the bottom of the file before “include” line and add:
+
+          zone "lab.local" IN { 
+type master; 
+file "forward.lab"; 
+allow-update { none; }; 
+}; 
+zone "1.168.192.in-addr.arpa" IN { 
+type master; 
+file "reverse.lab"; 
+allow-update { none; }; 
+}; 
+include "/etc/named.rfc1912.zones"; 
+include "/etc/named.root.key"; 
+1. check the package installed on the system.
+
+          rpm -qa | grep bind
+1. check the package installed on the system.
+
+          rpm -qa | grep bind
+1. check the package installed on the system.
+
+          rpm -qa | grep bind
