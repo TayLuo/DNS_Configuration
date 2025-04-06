@@ -130,9 +130,67 @@ Create Zone Files
 <img src="https://imgur.com/gvyqxVl.png" height="80%" width="80%" >
 <br /> 
 
-4. Edit the line "listen-on port 53 { 127.0.0.1; }"
+12. Start the DNS server
+
+          systemctl start named
+          systemctl enable named
+    
+13.  Edit the line "listen-on port 53 { 127.0.0.1; }"
 
           listen-on port 53 { 127.0.0.1; 192.168.2.4; };
+<p align="center"> </p>
+<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<br /> 
+
+14. Configured firewalld and allow the DNS traffic
+
+          firewall-cmd --add-service=dns --permanent
+          firewall-cmd --reload
+
+
+15. Configuring Permissions, Ownership, and SELinux
+
+          chgrp named -R /var/named 
+          chown -v root:named /etc/named.conf 
+          restorecon -rv /var/named 
+          restorecon /etc/named.conf 
+
+
+16. Test DNS configuration and zone files for any syntax errors 
+
+          named-checkconf /etc/named.conf 
+          named-checkzone lab.local /var/named/forward.lab 
+          named-checkzone lab.local /var/named/reverse.lab 
+<p align="center"> </p>
+<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<br /> 
+
+17. Configuring Permissions, Ownership, and SELinux
+
+          chgrp named -R /var/named 
+          chown -v root:named /etc/named.conf 
+          restorecon -rv /var/named 
+          restorecon /etc/named.conf
+<p align="center"> </p>
+<img src="https://imgur.com/km8oWsB.png" height="80%" width="80%" >
+<br /> 
+
+15. Configuring Permissions, Ownership, and SELinux
+
+          chgrp named -R /var/named 
+          chown -v root:named /etc/named.conf 
+          restorecon -rv /var/named 
+          restorecon /etc/named.conf
+<p align="center"> </p>
+<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<br /> 
+
+15. Configuring Permissions, Ownership, and SELinux
+
+          chgrp named -R /var/named 
+          chown -v root:named /etc/named.conf 
+          restorecon -rv /var/named 
+          restorecon /etc/named.conf
 <p align="center"> </p>
 <img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
 <br /> 
