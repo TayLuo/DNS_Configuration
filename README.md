@@ -78,10 +78,15 @@ Create Zone Files
 7. Create two file in /var/named
 
           touch forward.learninglinux
-          touch reverse.learninglinx 
-8. Modify the newly created Zone files - Forward zone file
+          touch reverse.learninglinx
+
+8. modify the forward.learninglinux file
+
+          vi forward.learninglinux
    
-            @   IN  SOA     masterdns.lab.local. root.learninglinux.com. ( 
+9. Modify the newly created Zone files - Forward zone file
+   
+            @   IN  SOA     masterdns.learninglinux.com. root.learninglinux.com. ( 
                 2011071001  ;Serial 
                 3600        ;Refresh 
                       1800        ;Retry 
@@ -91,10 +96,43 @@ Create Zone Files
            @       IN  NS          masterdns.learninglinux.com. 
            @       IN  A           192.168.2.4
            masterdns     IN  A     192.168.2.4
-           clienta             IN  A     192.168.2.5
+           clienta             IN  A    192.168.2.5
            clientb             IN  A    192.168.1.241 
    
 <p align="center"> </p>
 <img src="https://imgur.com/k1D2Eyc.png" height="80%" width="80%" >
 <br />
           
+10. Modify the reverse.learninglinx file
+
+         vi reverse.learninglinux
+
+
+
+11.  Modify the newly created Zone files - reverse zone file
+    
+         $TTL 86400 
+         @   IN  SOA     masterdns.learninglinux.com. root.learninglinux.com. ( 
+                         2011071001  ;Serial 
+                         3600        ;Refresh 
+                         1800        ;Retry 
+                         604800      ;Expire 
+                         86400       ;Minimum TTL 
+        ) 
+        @                                   IN  NS          masterdns.learninglinux.com. 
+        @                                   IN  PTR         lab.local. 
+       masterdns                            IN  A    192.169.2.4
+       29                                   IN  PTR         masterdns.learninglinux.com. 
+       240                                  IN  PTR         clienta.learninglinux.com. 
+       241                                  IN  PTR         clientb.learninglinux.com. 
+              
+<p align="center"> </p>
+<img src="https://imgur.com/gvyqxVl.png" height="80%" width="80%" >
+<br /> 
+
+4. Edit the line "listen-on port 53 { 127.0.0.1; }"
+
+          listen-on port 53 { 127.0.0.1; 192.168.2.4; };
+<p align="center"> </p>
+<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<br /> 
