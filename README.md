@@ -31,7 +31,11 @@ Here are the following steps:
    
    
         sudo dnf install bind bind-utils -y 
-   	     
+
+<p align="center"> </p>
+<img src="https://imgur.com/5iTCCeZ.png" height="80%" width="80%" >
+<br />  
+
 3. Configure DNS server 
 
           sudo vi /etc/named.conf
