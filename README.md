@@ -80,18 +80,18 @@ Create Zone Files
           touch forward.learninglinux
           touch reverse.learninglinx 
 8. Modify the newly created Zone files - Forward zone file
-          @   IN  SOA     masterdns.lab.local. root.learninglinux.com. ( 
+           @   IN  SOA     masterdns.lab.local. root.learninglinux.com. ( 
                 2011071001  ;Serial 
                 3600        ;Refresh 
                       1800        ;Retry 
                 604800      ;Expire 
                 86400       ;Minimum TTL 
-      ) 
-      @       IN  NS          masterdns.learninglinux.com. 
-      @       IN  A           192.168.2.4
-      masterdns     IN  A     192.168.2.4
-      clienta             IN  A     192.168.2.5
-      clientb             IN  A    192.168.1.241 
+           ) 
+           @       IN  NS          masterdns.learninglinux.com. 
+           @       IN  A           192.168.2.4
+           masterdns     IN  A     192.168.2.4
+           clienta             IN  A     192.168.2.5
+           clientb             IN  A    192.168.1.241 
    
 <p align="center"> </p>
 <img src="https://imgur.com/k1D2Eyc.png" height="80%" width="80%" >
