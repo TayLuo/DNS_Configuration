@@ -53,17 +53,24 @@ Here are the following steps:
 7. Go to the bottom of the file before “include” line and add:
 
           zone "lab.local" IN { 
-type master; 
-file "forward.lab"; 
-allow-update { none; }; 
-}; 
-zone "1.168.192.in-addr.arpa" IN { 
-type master; 
-file "reverse.lab"; 
-allow-update { none; }; 
-}; 
-include "/etc/named.rfc1912.zones"; 
-include "/etc/named.root.key"; 
+                type master; 
+                file "forward.learninglinux"; 
+                allow-update { none; }; 
+          }; 
+         zone "2.168.192.in-addr.arpa" IN { 
+               type master; 
+               file "reverse.learninglinux"; 
+               allow-update { none; }; 
+         }; 
+        include "/etc/named.rfc1912.zones"; 
+        include "/etc/named.root.key";
+<p align="center"> </p>
+<img src="https://imgur.com/jIHL0eB.png" height="80%" width="80%" >
+<br />
+<p align="center"> </p>
+<img src="https://imgur.com/3Sv2uOQ.png" height="80%" width="80%" >
+<br />
+
 1. check the package installed on the system.
 
           rpm -qa | grep bind
