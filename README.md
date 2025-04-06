@@ -39,10 +39,18 @@ Here are the following steps:
 3. Configure DNS server 
 
           sudo vi /etc/named.conf
-4. Edit the line "listen-on port 53 { 127.0.0.1; }"
+<p align="center"> </p>
+<img src="https://imgur.com/ICGexSW.png" height="80%" width="80%" >
+<br />  
+  
+5. Edit the line "listen-on port 53 { 127.0.0.1; }"
 
-          listen-on port 53 { 127.0.0.1; 192.168.2.4; }; 
-5. Go to the bottom of the file before “include” line and add:
+          listen-on port 53 { 127.0.0.1; 192.168.2.4; };
+<p align="center"> </p>
+<img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
+<br /> 
+
+7. Go to the bottom of the file before “include” line and add:
 
           zone "lab.local" IN { 
 type master; 
