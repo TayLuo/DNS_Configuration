@@ -169,7 +169,7 @@ Create Zone Files
 
 17.  Add DNS Server Information to network file 
 
-          vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+          vi /etc/sysconfig/network-scripts/ifcfg-eth0
           DNS=192.168.2.4
           
 
