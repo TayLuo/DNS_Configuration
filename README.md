@@ -111,20 +111,20 @@ Create Zone Files
 
 11.  Modify the newly created Zone files - reverse zone file
     
-         $TTL 86400 
-         @   IN  SOA     masterdns.learninglinux.com. root.learninglinux.com. ( 
+          $TTL 86400 
+          @   IN  SOA     masterdns.learninglinux.com. root.learninglinux.com. ( 
                          2011071001  ;Serial 
                          3600        ;Refresh 
                          1800        ;Retry 
                          604800      ;Expire 
-                         86400       ;Minimum TTL 
-        ) 
-        @                                   IN  NS          masterdns.learninglinux.com. 
-        @                                   IN  PTR         lab.local. 
-       masterdns                            IN  A    192.169.2.4
-       29                                   IN  PTR         masterdns.learninglinux.com. 
-       240                                  IN  PTR         clienta.learninglinux.com. 
-       241                                  IN  PTR         clientb.learninglinux.com. 
+                          86400       ;Minimum TTL 
+         ) 
+         @                                   IN  NS          masterdns.learninglinux.com. 
+         @                                   IN  PTR         lab.local. 
+        masterdns                            IN  A           192.169.2.4
+        29                                   IN  PTR         masterdns.learninglinux.com. 
+        240                                  IN  PTR         clienta.learninglinux.com. 
+        241                                  IN  PTR         clientb.learninglinux.com. 
               
 <p align="center"> </p>
 <img src="https://imgur.com/gvyqxVl.png" height="80%" width="80%" >
