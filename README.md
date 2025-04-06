@@ -27,7 +27,7 @@ Here are the following steps:
 
 
 
-2. If the package is not installed, here is the command to install the package.
+ 2. If the package is not installed, here is the command to install the package.
    
    
         sudo dnf install bind bind-utils -y 
@@ -43,14 +43,14 @@ Here are the following steps:
 <img src="https://imgur.com/ICGexSW.png" height="80%" width="80%" >
 <br />  
   
-5. Edit the line "listen-on port 53 { 127.0.0.1; }"
+4. Edit the line "listen-on port 53 { 127.0.0.1; }"
 
           listen-on port 53 { 127.0.0.1; 192.168.2.4; };
 <p align="center"> </p>
 <img src="https://imgur.com/NPxEtPp.png" height="80%" width="80%" >
 <br /> 
 
-7. Go to the bottom of the file before “include” line and add:
+5. Go to the bottom of the file before “include” line and add:
 
           zone "lab.local" IN { 
                 type master; 
@@ -71,12 +71,29 @@ Here are the following steps:
 <img src="https://imgur.com/3Sv2uOQ.png" height="80%" width="80%" >
 <br />
 
-1. check the package installed on the system.
+Create Zone Files
+6. Go to the /var/named file
 
-          rpm -qa | grep bind
-1. check the package installed on the system.
+          cd /var/named
+7. Create two file in /var/named
 
-          rpm -qa | grep bind
-1. check the package installed on the system.
-
-          rpm -qa | grep bind
+          touch forward.learninglinux
+          touch reverse.learninglinx 
+8. Modify the newly created Zone files - Forward zone file
+          @   IN  SOA     masterdns.lab.local. root.learninglinux.com. ( 
+                2011071001  ;Serial 
+                3600        ;Refresh 
+                      1800        ;Retry 
+                604800      ;Expire 
+                86400       ;Minimum TTL 
+      ) 
+      @       IN  NS          masterdns.learninglinux.com. 
+      @       IN  A           192.168.2.4
+      masterdns     IN  A     192.168.2.4
+      clienta             IN  A     192.168.2.5
+      clientb             IN  A    192.168.1.241 
+   
+<p align="center"> </p>
+<img src="https://imgur.com/k1D2Eyc.png" height="80%" width="80%" >
+<br />
+          
