@@ -121,10 +121,10 @@ Create Zone Files
          ) 
          @                                   IN  NS          masterdns.learninglinux.com. 
          @                                   IN  PTR         lab.local. 
-        masterdns                            IN  A           192.169.2.4
-        29                                   IN  PTR         masterdns.learninglinux.com. 
-        240                                  IN  PTR         clienta.learninglinux.com. 
-        241                                  IN  PTR         clientb.learninglinux.com. 
+         masterdns                            IN  A           192.169.2.4
+         29                                   IN  PTR         masterdns.learninglinux.com. 
+         240                                  IN  PTR         clienta.learninglinux.com. 
+         241                                  IN  PTR         clientb.learninglinux.com. 
               
 <p align="center"> </p>
 <img src="https://imgur.com/gvyqxVl.png" height="80%" width="80%" >
